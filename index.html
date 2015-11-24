@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/isotope.pkgd.min.js"></script>
+<style>
+	.grid-item { 
+		width:300px;
+		height:300px;	
+		box-shadow: 0 0 10px rgba(0,0,0,0.5);
+		margin:10px;
+		float:left;
+		text-align:center;
+		border-radius: 10px 10px 10px 10px;
+	}
+	.grid-item:hover {
+		background-color:rgb(230, 230, 230)
+	}
+	.picture {
+		margin-top:5%;
+	}
+	.container{
+		margin-top:5%;
+		margin-bottom:5%;
+		padding:20px;
+	}
+	li {
+		list-style-type:none;
+		float:left;
+		margin-right:10px;
+		border:1px solid #e4edf4;
+		padding:2px;
+		cursor:pointer;
+		width:75px;
+		text-align:center;
+		color:#3e6d8e;
+		background:#e4edf4;
+	}
+	li:hover{
+		background:#E4EEBC;
+	}
+	.blockTag {
+		margin-bottom:3%;
+	}
+	.tag {
+	/*	dispay:none; */
+		position:absolute;
+		bottom:5%;
+		width:100%;
+		text-align:center;
+		color:navy;
+		font-weigth:bold;
+	}
+	.curTag {
+		float:right;
+		font-size:250%;
+		margin-top:-50px;
+	}
+</style>
+</head>
+<body>
+<div class="container">
+	<div class="row blockTag">
+		<ul>
+			<li data-tag="JS">Native JS</li>
+			<li data-tag="jQuery">jQuery</li>
+			<li data-tag="AngularJS">AngularJS</li>
+			<li data-tag="Node">Node.js</li>
+		</ul>
+	</div>
+	<div class="curTag">
+		#all
+	</div>
+	<div class="row grid">
+		<div class="grid-item">
+			<div>
+				<img src="img/node.png" class="picture">
+			</div>
+			<div class="tag">#Node</div>
+		</div>
+		<div class="grid-item">
+			<div>
+				<img src="img/js.png" class="picture">
+			</div>
+			<div class="tag">#JS</div>
+		</div>
+		<div class="grid-item">
+			<div>
+				<img src="img/jquery.png" class="picture">
+			</div>
+			<div class="tag">#JS#jQuery</div>
+		</div>
+		<div class="grid-item">
+			<div>
+				<img src="img/angular.png" class="picture">
+			</div>
+			<div class="tag" class="picture">#AngularJS</div>
+		</div>
+		<div class="grid-item">
+			<div>
+				<img src="img/node.png" class="picture">
+			</div>
+			<div class="tag">#JS#Node</div>
+		</div>
+		<div class="grid-item">
+			<div>
+				<img src="img/jquery.png" class="picture">
+			</div>
+			<div class="tag">#jQuery</div>
+		</div>
+		<div class="grid-item">
+			<div>
+				<img src="img/angular.png" class="picture">
+			</div>
+			<div class="tag" class="picture">#JS#jQuery#AngularJS</div>
+		</div>
+		<div class="grid-item">
+			<div>
+				<img src="img/jquery.png" class="picture">
+			</div>
+			<div class="tag">#jQuery</div>
+		</div>
+		<div class="grid-item">
+			<div>
+				<img src="img/js.png" class="picture">
+			</div>
+			<div class="tag">#JS</div>
+		</div>
+		<div class="grid-item">
+			<div>
+				<img src="img/node.png" class="picture">
+			</div>
+			<div class="tag">#JS#jQuery#AngularJS#Node</div>
+		</div>
+	</div>
+</div>
+<script>
+	$(document).ready(function(){
+		$('.grid').isotope({
+			itemSelector: '.grid-item',
+			layoutMode: 'fitRows'
+		});
+		$('li').bind('click',function() {
+							var curAttr = $(this).attr('data-tag');
+							$('.curTag').fadeOut(200,function(){
+								$('.curTag').text('#'+curAttr).fadeIn();		
+							});
+							$('.grid').isotope({
+										filter: function() {
+													var tag = false;
+													var arrTags = $(this).find('.tag').text();
+													arrTags = arrTags.split('#');
+													$.each(arrTags,function(index,value){
+														if (value == curAttr) {
+															tag = true;
+														}
+													});
+													return tag;	
+													}	
+													
+												})
+							});			
+	});
+</script>
+</body>
+</html>

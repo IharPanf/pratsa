@@ -344,7 +344,7 @@ a:hover {
   float: left;
   width: 100%;
   min-height: 30px;
-  margin-left: 2.127659574468085%;
+  *margin-left: 2.127659574468085%;
   *margin-left: 2.074468085106383%;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -1795,12 +1795,15 @@ legend + .control-group {
   width: 160px;
   padding-top: 5px;
   text-align: right;
+  padding-right:10px;
+  font-size:120%;
+  font-weight:bold;  
 }
 
 .form-horizontal .controls {
   *display: inline-block;
   *padding-left: 20px;
-  margin-left: 180px;
+  *margin-left: 180px;
   *margin-left: 0;
 }
 
@@ -1819,7 +1822,7 @@ legend + .control-group {
 }
 
 .form-horizontal .form-actions {
-  padding-left: 180px;
+  *padding-left: 180px;
 }
 
 table {

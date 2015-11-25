@@ -1,0 +1,85 @@
+.grid-item { 
+	height:300px;	
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	text-align:center;
+	cursor:pointer;
+	margin: 0 10px 10px 0;
+	border-radius: 10px 10px 10px 10px;
+}
+.grid-item:hover {
+	background-color:rgb(230, 230, 230)
+}
+.picture {
+	margin-top:5%;
+}
+.container{
+	margin-top:5%;
+	margin-bottom:5%;
+}
+.blockTag li {
+	list-style-type:none;
+	float:left;
+	margin-right:10px;
+	border:1px solid #e4edf4;
+	padding:2px;
+	cursor:pointer;
+	width:75px;
+	text-align:center;
+	color:#3e6d8e;
+	background:#e4edf4;
+	margin-bottom:10px;
+}
+.blockTag li:hover{
+	background:#E4EEBC;
+}
+.blockTag {
+	margin-bottom:3%;
+}
+.title, .tag {
+	/*	dispay:none; */
+	position:absolute;
+	bottom:5%;
+	width:100%;
+	text-align:center;
+	color:navy;
+	font-weight:bold;
+}
+.title {
+	bottom:10%;
+	color:inherit;
+}
+.curTag {
+	float:right;
+	font-size:250%;
+	margin-top:-50px;
+	margin-right:50px;
+}
+.header{
+	background:#3a3a3a;
+	color:white;
+	padding:10px;
+	padding-right:40px;
+	min-height:30px;
+}
+.header div {
+	float:right;
+}
+.header div div {
+	margin-right:10px;
+	font-size:140%;
+	cursor:pointer;
+	width:100px;
+}
+.header div div a {
+	color:white;
+	text-decoration: none;
+}
+.header div div:hover,.header div div a:hover{
+	color:yellow;
+}
+.btn-block{
+	text-align:center;
+}
+#inputText{
+	resize: none;
+}	

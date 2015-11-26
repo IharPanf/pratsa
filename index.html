@@ -9,7 +9,7 @@
 <nav class="navbar navbar-fixed-top header" role="navigation">
 	<div>
 		<div id="btnContact">Контакты</div>
-		<div><a href="index.html">Главная</a></div>
+		<div><a href="#/">Главная</a></div>
 	</div>		
 </nav>
 <div id="modal" class="modal fade">
@@ -37,36 +37,39 @@
 		</form>
     </div>
 </div>
-<div class="container" data-ng-controller="showController">
-	<div class="row-fluid blockTag">
-		<ul>
-			<li data-tag="JS">Native JS</li>
-			<li data-tag="jQuery">jQuery</li>
-			<li data-tag="AngularJS">AngularJS</li>
-			<li data-tag="Node">Node.js</li>
-		</ul>
-	</div>
-	<div class="hidden-xs curTag">
-		#all
-	</div>
-	<div class="grid">
-		<div class="row-fluid">
-			<div class="grid-item span4" data-ng-repeat="elem in arrElem">
-				<div>
-					<img data-ng-src= {{elem.srcPicture}} class="picture">
-				</div>
-				<h5 class="title">{{elem.title}}</h5>
-				<div class="tag">{{elem.hashTag}}</div>
-			</div>
-		</div>		
-	</div>
-</div>
+<div id="up"><p>UP</p></div>
 <script src="js/jquery.min.js"></script>
-<script src="js/isotope.pkgd.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="js/isotope.pkgd.min.js"></script>
 <script src="js/custom.js"></script>
-<script> var showApp = angular.module('showApp', []);</script>
-<script src="js/showController.js"></script>
+<script> 
+	var showApp = angular.module('showApp', ['ngRoute']);
+
+    showApp.config(function($routeProvider) {
+        $routeProvider.
+          when('/', {
+            templateUrl: 'template/main.html',
+            controller: 'ShowAll'
+          }).
+          when('/:technologyName', {
+            templateUrl: 'template/detail.html',
+            controller: 'ShowDetail'
+          }).
+          otherwise({
+            redirectTo: '/'
+          });
+      });
+
+    showApp.controller('ShowAll', function ($scope, $http){
+		$http.get('dataFile.json').success(function(data) {
+          $scope.arrElem = data;
+
+        });
+	});
+
+</script>
+<div data-ng-view></div>
 </body>
 </html>

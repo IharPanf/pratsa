@@ -3,19 +3,20 @@
 <head>
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/bootstrap-responsive.css">	
-	<link rel="stylesheet" href="css/custom.css">	
+	<link rel="stylesheet" href="css/custom.css">
+	<meta charset="utf-8">	
 </head>
 <body>
 <nav class="navbar navbar-fixed-top header" role="navigation">
 	<div>
-		<div id="btnContact">Контакты</div>
-		<div><a href="#/">Главная</a></div>
+		<div id="btnContact">РљРѕРЅС‚Р°РєС‚С‹</div>
+		<div><a href="#/">Р“Р»Р°РІРЅР°СЏ</a></div>
 	</div>		
 </nav>
 <div id="modal" class="modal fade">
     <div class="modal-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-        <h2>Есть что сказать?</h2>
+        <h2>Р•СЃС‚СЊ С‡С‚Рѕ СЃРєР°Р·Р°С‚СЊ?</h2>
     </div>
     <div class="modal-body">
         <form class="form-horizontal">
@@ -28,11 +29,11 @@
 			<div class="control-group">
 				<label class="control-label" for="inputText">Text</label>
 				<div class="controls">
-					<textarea rows="10" id="inputText" placeholder="текст сообщения"></textarea>
+					<textarea rows="10" id="inputText" placeholder="С‚РµРєСЃС‚ СЃРѕРѕР±С‰РµРЅРёСЏ"></textarea>
 				</div>
 			</div>
 			<div class="control-group btn-block">
-				<button type="submit" data-dismiss="modal" class="btn btn-primary">Отправить</button>
+				<button type="submit" data-dismiss="modal" class="btn btn-primary">РћС‚РїСЂР°РІРёС‚СЊ</button>
 			</div>	
 		</form>
     </div>
@@ -68,7 +69,16 @@
 
         });
 	});
+	
+	showApp.controller('ShowDetail', function ($scope, $routeParams, $http){
+        $scope.name = $routeParams.technologyName;
 
+        $http.get('dataFile.json').success(function(data) {
+          $scope.technology = data.filter(function(dataFilter){
+            return dataFilter.name === $scope.name;
+         })[0];
+		});
+    });
 </script>
 <div data-ng-view></div>
 </body>

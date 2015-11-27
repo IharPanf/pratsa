@@ -1,9 +1,11 @@
 [
-	{ "srcPicture" : "img/js.png",
-	  "hashTag"    : "#JS",
-	  "title"      : "textTextText"	
+	{ "name"       : "test_history_php",
+	  "srcPicture" : "img/quiz_history_php.png",
+	  "hashTag"    : "#jQuery",
+	  "title"      : "ТЕСТ:несколько вопросов об истории PHP"	
 	},
-	{ "srcPicture" : "img/jquery.png",
+	{ 
+	  "srcPicture" : "img/jquery.png",
 	  "hashTag"    : "#JS#jQuery",
 	  "title"      : "textTextText"	
 	},

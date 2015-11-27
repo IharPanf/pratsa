@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap-responsive.css">
+	<style>
+		.container{
+			margin-top:5%;
+			margin-bottom:5%;
+			text-align:center;
+		}
+		.block {
+			width:50%;
+			border:1px solid grey;
+			background:#8892BF;
+			margin-bottom:5px;
+			text-align:center;
+			color:white;
+			padding:10%;
+			font-weight:bold;
+			font-size:200%;
+			border-radius:5px 5px 5px 5px;
+			top:auto;
+		}
+		.quest {
+			background:#333333;
+			color:#CCCCCC;
+			font-size:12px;
+			font-weight:normal;
+			text-align:center;
+			cursor:pointer;
+			padding:5px;
+			width:40%;
+		}
+		.error{
+			background:red;
+		}
+		.correct{
+			background:green;
+		}
+		.hidden{
+			display:none;
+		}
+		.end {
+			text-align:center;
+		}
+		.header {
+			margin-bottom:30px;
+		}
+</style>	
+</head>
+<body>
+	<div class="container">
+		<div class="row header">
+			<h2>Несколько вопросов об истории PHP.</h2>
+			<small>(перетягиваем черный прямоугольник на соответствующую версию php)</small>
+		</div>
+		<div class="row">
+			<div class="span6">
+				<div class="block quest">
+					<div class="hidden"></div>
+				</div>
+			</div>
+			<div class="span6 version">
+				<div class="block">PHP 3</div>
+				<div class="block">PHP 4</div>
+				<div class="block">PHP 5</div>
+				<div class="block">PHP 6</div>
+				<div class="block">PHP 7</div>
+			</div>
+		</div>
+	</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>	
+<script src="js/custom.js"></script>	
+<script>
+	$(function() {
+		$(".quest").draggable();
+	});
+	$(document).ready(function(){
+		$(".quest").html(objQuest[numQuest].text+'<div class="hidden">'+objQuest[numQuest].correct+'</div>')
+		$(".block").droppable({
+					drop: function(event, ui) {
+							var curAnswer = $(".quest div").text();
+							if (curAnswer == $(this).text()) {
+								$(this).addClass('correct');
+							} else {
+								$(this).addClass('error');
+							}
+							numQuest++;
+							if(numQuest >= objQuest.length) {
+								showVictory();
+							} else {
+								$(".quest").fadeOut(500,showNextQuest);
+							}	
+					}
+		});
+	})
+	
+	function showNextQuest() {
+		$(".quest")
+			.css({
+					'left':'0px',
+					'top':'0px',
+				})
+			.html(objQuest[numQuest].text+'<div class="hidden">'+objQuest[numQuest].correct+'</div>')
+			.fadeIn(500,function(){
+						$(".block").removeClass('correct error');
+					});
+		$(".quest div").text(objQuest[numQuest].correct)			
+	}
+	
+	function showVictory() {
+		$('.container').html('<div class="end"><h1>Хорошего кода!</h1></div>');
+	}
+	var numQuest = 0;
+</script>
+</body>
+</html>

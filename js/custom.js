@@ -16,27 +16,21 @@ $('#up').on('click',function(){
 								 });
 })
 
-//Отложенная загрузка, ждем загрузки  AngularJS		
+//РћС‚Р»РѕР¶РµРЅРЅР°СЏ Р·Р°РіСЂСѓР·РєР°, Р¶РґРµРј Р·Р°РіСЂСѓР·РєРё  AngularJS		
 setTimeout(function(){
-		$('.grid-item').on('click',function(){
-			alert('В стадии разработки');
-		});
 		$('.grid').isotope({
 			itemSelector: '.grid-item',
 			layoutMode: 'fitRows'
 		});
 		$('.blockTag ul li').on('click',function() {
 							var curAttr = $(this).attr('data-tag');
-							console.log(curAttr);
 							$('.curTag').fadeOut(200,function(){
 								$('.curTag').text('#'+curAttr).fadeIn();		
 							});
-							console.log($('.grid'));
 							$('.grid').isotope({
 										filter: function() {	
 													var tag = false;
 													var arrTags = $(this).find('.tag').text();
-													console.log($(this));
 													arrTags = arrTags.split('#');
 													$.each(arrTags,function(index,value){
 														if (value == curAttr) {

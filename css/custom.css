@@ -12,6 +12,9 @@
 .picture {
 	margin-top:5%;
 }
+.picture:hover {
+	border:1px dashed grey;
+}
 .container{
 	margin-top:5%;
 	margin-bottom:5%;
@@ -89,7 +92,6 @@
 	position:fixed;
 	bottom:50px;
 	right:20px;
-	z-index:999;
 	background-color:#000;
 	border-radius:30px; 
 	color:white;

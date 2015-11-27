@@ -13,11 +13,13 @@
 	<div class="grid">
 		<div class="row-fluid">
 			<div class="grid-item span4" data-ng-repeat="elem in arrElem">
+				<a href="#/{{elem.name}}">
 				<div>
 					<img data-ng-src= {{elem.srcPicture}} class="picture">
 				</div>
 				<h5 class="title">{{elem.title}}</h5>
 				<div class="tag">{{elem.hashTag}}</div>
+				</a>				
 			</div>
 		</div>		
 	</div>

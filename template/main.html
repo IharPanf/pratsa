@@ -1,19 +1,18 @@
 <div class="container" data-ng-controller="ShowAll">
 	<div class="row-fluid blockTag">
-		<ul>
-			<li data-tag="JS">Native JS</li>
-			<li data-tag="jQuery">jQuery</li>
-			<li data-tag="AngularJS">AngularJS</li>
-			<li data-tag="Node">Node.js</li>
-		</ul>
-	</div>
-	<div class="hidden-xs curTag">
-		#all
+		<div>
+			<ul>
+				<li data-ng-repeat="category in arrCategory" data-tag="{{category.short}}">{{category.name}}</li>
+			</ul>
+		</div>
+		<div class="curTag">
+			#all
+		</div>
 	</div>
 	<div class="grid">
 		<div class="row-fluid">
 			<div class="grid-item span4" data-ng-repeat="elem in arrElem">
-				<a href="#/{{elem.name}}">
+				<a href="#/include/{{elem.name}}">
 				<div>
 					<img data-ng-src= {{elem.srcPicture}} class="picture">
 				</div>
@@ -23,4 +22,33 @@
 			</div>
 		</div>		
 	</div>
+	<script>
+	//Отложенная загрузка, ждем загрузки  AngularJS	
+	setTimeout(function(){
+		$('.grid').isotope({
+			itemSelector: '.grid-item',
+			layoutMode: 'fitRows'
+		});
+		$('.blockTag ul li').on('click',function() {
+							var curAttr = $(this).attr('data-tag');
+							$('.curTag').fadeOut(200,function(){
+								$('.curTag').text('#'+curAttr).fadeIn();		
+							});
+							$('.grid').isotope({
+										filter: function() {	
+													var tag = false;
+													var arrTags = $(this).find('.tag').text();
+													arrTags = arrTags.split('#');
+													$.each(arrTags,function(index,value){
+														if (value == curAttr) {
+															tag = true;
+														}
+													});
+													return tag;	
+													}	
+													
+												})
+							});					
+		},1000);								
+	</script>
 </div>

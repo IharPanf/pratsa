@@ -8,9 +8,12 @@
 </head>
 <body>
 <nav class="navbar navbar-fixed-top header" role="navigation">
-	<div>
-		<div id="btnContact">Контакты</div>
-		<div><a href="#/">Главная</a></div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="span10"></div>
+			<div class="span"><a href="#/">Главная</a></div>
+			<div id="btnContact" class="span">Контакты</div>
+		</div>
 	</div>		
 </nav>
 <div id="modal" class="modal fade">
@@ -29,11 +32,11 @@
 			<div class="control-group">
 				<label class="control-label" for="inputText">Text</label>
 				<div class="controls">
-					<textarea rows="10" id="inputText" placeholder="текст сообщения"></textarea>
+					<textarea rows="6" id="inputText" placeholder="текст сообщения"></textarea>
 				</div>
 			</div>
 			<div class="control-group btn-block">
-				<button type="submit" data-dismiss="modal" class="btn btn-primary">Отправить</button>
+				<button type="submit" data-dismiss="modal" class="btn btn-primary btn-large">Отправить</button>
 			</div>	
 		</form>
     </div>
@@ -44,42 +47,10 @@
 <script src="js/angular.min.js"></script>
 <script src="js/angular-route.min.js"></script>
 <script src="js/isotope.pkgd.min.js"></script>
-<script src="js/custom.js"></script>
 <script> 
 	var showApp = angular.module('showApp', ['ngRoute']);
-
-    showApp.config(function($routeProvider) {
-        $routeProvider.
-          when('/', {
-            templateUrl: 'template/main.html',
-            controller: 'ShowAll'
-          }).
-          when('/:technologyName', {
-            templateUrl: 'template/detail.html',
-            controller: 'ShowDetail'
-          }).
-          otherwise({
-            redirectTo: '/'
-          });
-      });
-
-    showApp.controller('ShowAll', function ($scope, $http){
-		$http.get('dataFile.json').success(function(data) {
-          $scope.arrElem = data;
-
-        });
-	});
-	
-	showApp.controller('ShowDetail', function ($scope, $routeParams, $http){
-        $scope.name = $routeParams.technologyName;
-
-        $http.get('dataFile.json').success(function(data) {
-          $scope.technology = data.filter(function(dataFilter){
-            return dataFilter.name === $scope.name;
-         })[0];
-		});
-    });
 </script>
+<script src="js/custom.js"></script>
 <div data-ng-view></div>
 </body>
 </html>

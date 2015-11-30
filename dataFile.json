@@ -1,7 +1,7 @@
 [
 	{ "name"       : "test_history_php",
 	  "srcPicture" : "img/quiz_history_php.png",
-	  "hashTag"    : "#jQuery",
+	  "hashTag"    : "#jQuery#Quiz",
 	  "title"      : "ТЕСТ:несколько вопросов об истории PHP"	
 	},
 	{ 

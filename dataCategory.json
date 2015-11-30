@@ -1,0 +1,12 @@
+[
+	{ "name"       : "Native JS",
+	  "short"      : "JS"},
+	{ "name"       : "jQuery",
+	  "short"      : "jQuery"},
+	{ "name"       : "AngularJS",
+	  "short"      : "AngularJS"},
+	{ "name"       : "Node.js",
+	  "short"      : "Node"},
+	{ "name"       : "Quiz",
+	  "short"      : "Quiz"}  
+]	

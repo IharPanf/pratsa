@@ -1,3 +1,11 @@
 <div class="container" data-ng-controller="ShowDetail">
-	<div>Тут будет просмотр деталей поделки. Пока не придумал как это сделать</div>
+	<div class="row">
+		<div style="display:none" id="source"></div>
+		<iframe src="{{'../include/'+name + '/index.html'}}" seamless>
+			Ваш браузер не поддерживает плавающие фреймы!
+		</iframe>
+	</div>
+	<script>
+	//	$('iframe').attr('src',path);
+	</script>
 </div>

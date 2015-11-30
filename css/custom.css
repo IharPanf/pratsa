@@ -24,7 +24,7 @@
 	float:left;
 	margin-right:10px;
 	border:1px solid #e4edf4;
-	padding:2px;
+	padding:10px;
 	cursor:pointer;
 	width:75px;
 	text-align:center;
@@ -37,6 +37,7 @@
 }
 .blockTag {
 	margin-bottom:3%;
+	margin-top:3%;
 }
 .title, .tag {
 	/*	dispay:none; */
@@ -51,30 +52,29 @@
 .curTag {
 	float:right;
 	font-size:250%;
-	margin-top:-50px;
 	margin-right:50px;
+}
+@media screen and (max-width:800px) {
+	.curTag {
+		display:none;
+	}
 }
 .header{
 	background:#3a3a3a;
 	color:white;
-	padding:10px;
-	padding-right:40px;
+	padding:20px;
 	min-height:30px;
-}
-.header div {
-	float:right;
 }
 .header div div {
 	margin-right:10px;
-	font-size:140%;
+	font-size:120%;
 	cursor:pointer;
-	width:100px;
 }
 .header div div a {
 	color:white;
 	text-decoration: none;
 }
-.header div div:hover,.header div div a:hover{
+.header div div div:hover,.header div div div a:hover{
 	color:yellow;
 }
 .btn-block{
@@ -86,12 +86,19 @@
 #modal{
 	display:none;
 }
+.modal-header h2 {
+	text-align:center;
+}
+.btn-block button {
+	width:50%;
+}
 #up {
 	width:60px;
 	height:60px;
 	position:fixed;
 	bottom:50px;
 	right:20px;
+	z-index:999;
 	background-color:#000;
 	border-radius:30px; 
 	color:white;
@@ -110,4 +117,12 @@
 }
 #up p {
 	padding-top:20px;
+}
+.span2 {
+	margin-bottom:5px;
+}
+iframe {
+	width:100%;
+	height:900px;
+	
 }

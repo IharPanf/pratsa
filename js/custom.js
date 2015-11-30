@@ -1,5 +1,43 @@
+//for AngularJS
+showApp.config(function($routeProvider) {
+        $routeProvider.
+          when('/', {
+            templateUrl: 'template/main.html',
+            controller: 'ShowAll'
+          }).
+          when('/include/:technologyName', {
+            templateUrl: 'template/detail.html',
+            controller: 'ShowDetail'
+          }).
+          otherwise({
+            redirectTo: '/'
+          });
+      });
+
+    showApp.controller('ShowAll', function ($scope, $http){
+		$http.get('dataFile.json').success(function(data) {
+          $scope.arrElem = data;
+        });
+		$http.get('dataCategory.json').success(function(data) {
+          $scope.arrCategory = data;
+        });
+	});
+	
+	showApp.controller('ShowDetail', function ($scope, $routeParams, $http){
+        $scope.name = $routeParams.technologyName;
+
+        $http.get('dataFile.json').success(function(data) {
+          $scope.technology = data.filter(function(dataFilter){
+            return dataFilter.name === $scope.name;
+         })[0];
+		});
+    });
+//////////////////////////////////////////////////
 $('#btnContact').on('click',function(){
 	 $('#modal').modal();
+	 $('.modal-backdrop').on('click',function(){
+		$('.close').click();
+	 })
 });
 $(window).scroll(function() {
 	if ($(this).scrollTop() > 0) {
@@ -15,32 +53,3 @@ $('#up').on('click',function(){
 									$('#up').fadeOut();	
 								 });
 })
-
-//Отложенная загрузка, ждем загрузки  AngularJS		
-setTimeout(function(){
-		$('.grid').isotope({
-			itemSelector: '.grid-item',
-			layoutMode: 'fitRows'
-		});
-		$('.blockTag ul li').on('click',function() {
-							var curAttr = $(this).attr('data-tag');
-							$('.curTag').fadeOut(200,function(){
-								$('.curTag').text('#'+curAttr).fadeIn();		
-							});
-							$('.grid').isotope({
-										filter: function() {	
-													var tag = false;
-													var arrTags = $(this).find('.tag').text();
-													arrTags = arrTags.split('#');
-													$.each(arrTags,function(index,value){
-														if (value == curAttr) {
-															tag = true;
-														}
-													});
-													return tag;	
-													}	
-													
-												})
-							});				
-		
-},1000);

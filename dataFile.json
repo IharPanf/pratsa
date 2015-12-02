@@ -1,4 +1,19 @@
 [
+	{ "name"       : "simple_slider",
+	  "srcPicture" : "img/simple_slider.png",
+	  "hashTag"    : "#jQuery",
+	  "title"      : "Пример простого слайдера на jQuery"	
+	},
+	{ "name"       : "usd_quotes",
+	  "srcPicture" : "img/usd_quotes.png",
+	  "hashTag"    : "#D3js",
+	  "title"      : "Диаграмма: Курс USD на ноябрь 2015"	
+	},
+	{ "name"       : "exam_blur_jquery",
+	  "srcPicture" : "img/exam_blur_jquery.png",
+	  "hashTag"    : "#jQuery",
+	  "title"      : "Пример 'размытия' группы блоков, при наведении на один"	
+	},
 	{ "name"       : "test_history_php",
 	  "srcPicture" : "img/quiz_history_php.png",
 	  "hashTag"    : "#jQuery#Quiz",

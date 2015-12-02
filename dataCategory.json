@@ -1,4 +1,6 @@
 [
+	{ "name"       : "D3js",
+	  "short"      : "D3js"},
 	{ "name"       : "Native JS",
 	  "short"      : "JS"},
 	{ "name"       : "jQuery",

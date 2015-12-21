@@ -1,4 +1,24 @@
 [
+	{ "name"       : "use_css3",
+	  "srcPicture" : "img/use_css3.png",
+	  "hashTag"    : "#jQuery",
+	  "title"      : "Пример работы с изображением используя свойства CSS3."	
+	},
+	{ "name"       : "exampleajax",
+	  "srcPicture" : "img/exampleajax.png",
+	  "hashTag"    : "#jQuery#Bootstrap#PHP",
+	  "title"      : "Проверка email. jQuery+PHP"	
+	},
+	{ "name"       : "quiz_css_property",
+	  "srcPicture" : "img/quiz_css_property.png",
+	  "hashTag"    : "#jQuery",
+	  "title"      : "ТЕСТ:значения по умолчанию для css свойств"	
+	},
+	{ "name"       : "hoveralls",
+	  "srcPicture" : "img/hoveralls.png",
+	  "hashTag"    : "#jQuery",
+	  "title"      : "Пример работы с библиотекой HoverAlls"	
+	},
 	{ "name"       : "simple_slider",
 	  "srcPicture" : "img/simple_slider.png",
 	  "hashTag"    : "#jQuery",

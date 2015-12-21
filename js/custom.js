@@ -53,3 +53,22 @@ $('#up').on('click',function(){
 									$('#up').fadeOut();	
 								 });
 })
+
+$('.form-horizontal').submit(function(e) {
+					var $form = $(this);
+					$.ajax({
+						type: $form.attr('method'),
+						url: $form.attr('action'),
+						data: $form.serialize()
+					})
+					.done(function() {
+						$('.btn-block .btn').attr('data-dismiss','modal');
+						$('.btn-block .btn').click();
+						$('#inputText').val('');
+						$('.btn-block .btn').attr('data-dismiss','');
+					})
+					.fail( function() {
+						alert('Ошибка отправки сообщения. Попробуйте позже.');
+					})
+					e.preventDefault(); 
+});

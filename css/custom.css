@@ -16,9 +16,6 @@
 	border:1px dashed grey;
 }
 /*******Блок тегов*****/
-.main {
-	margin-top:5%;
-}
 .blockTag li {
 	list-style-type:none;
 	float:left;
@@ -55,13 +52,13 @@
 	margin-right:50px;
 }
 @media screen and (max-width:800px) {
-	.curTag {
+	.curTag, .bigimage {
 		display:none;
 	}
 }
 /*********** Header ***********/
 .header {
-	background:#3a3a3a;
+	background:#3E6D8E;
 	morgin-bottom:5%;
 	padding:10px;
 }
@@ -74,6 +71,13 @@
 .topmenu div:hover, .topmenu div a:hover {
 	color:yellow;
 }
+.bigimage {
+	padding:0px;
+	margin-top:50px;
+}
+.detail {
+	margin-top:5%;
+}
 /*******************************/
 
 .btn-block{
@@ -84,6 +88,7 @@
 }
 #modal{
 	display:none;
+	color:#3E6D8E;
 }
 .modal-header h2 {
 	text-align:center;
@@ -98,7 +103,7 @@
 	bottom:50px;
 	right:20px;
 	z-index:999;
-	background-color:#000;
+	background-color:#3E6D8E;
 	border-radius:30px; 
 	color:white;
 	text-align:center;

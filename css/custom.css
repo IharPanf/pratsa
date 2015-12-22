@@ -15,9 +15,9 @@
 .picture:hover {
 	border:1px dashed grey;
 }
-.container{
+/*******Блок тегов*****/
+.main {
 	margin-top:5%;
-	margin-bottom:5%;
 }
 .blockTag li {
 	list-style-type:none;
@@ -59,24 +59,23 @@
 		display:none;
 	}
 }
-.header{
+/*********** Header ***********/
+.header {
 	background:#3a3a3a;
-	color:white;
-	padding:20px;
-	min-height:30px;
+	morgin-bottom:5%;
+	padding:10px;
 }
-.header div div {
-	margin-right:10px;
-	font-size:120%;
+.topmenu div, .topmenu div a {
+	font-size:16px;
+	text-decoration: none;
+	color:white;
 	cursor:pointer;
 }
-.header div div a {
-	color:white;
-	text-decoration: none;
-}
-.header div div div:hover,.header div div div a:hover{
+.topmenu div:hover, .topmenu div a:hover {
 	color:yellow;
 }
+/*******************************/
+
 .btn-block{
 	text-align:center;
 }

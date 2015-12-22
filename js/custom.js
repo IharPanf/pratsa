@@ -1,4 +1,4 @@
-//for AngularJS
+//////////////////for AngularJS
 showApp.config(function($routeProvider) {
         $routeProvider.
           when('/', {
@@ -12,9 +12,9 @@ showApp.config(function($routeProvider) {
           otherwise({
             redirectTo: '/'
           });
-      });
+	});
 
-    showApp.controller('ShowAll', function ($scope, $http){
+showApp.controller('ShowAll', function ($scope, $http){
 		$http.get('dataFile.json').success(function(data) {
           $scope.arrElem = data;
         });
@@ -23,7 +23,7 @@ showApp.config(function($routeProvider) {
         });
 	});
 	
-	showApp.controller('ShowDetail', function ($scope, $routeParams, $http){
+showApp.controller('ShowDetail', function ($scope, $routeParams, $http){
         $scope.name = $routeParams.technologyName;
 
         $http.get('dataFile.json').success(function(data) {
@@ -34,41 +34,41 @@ showApp.config(function($routeProvider) {
     });
 //////////////////////////////////////////////////
 $('#btnContact').on('click',function(){
-	 $('#modal').modal();
-	 $('.modal-backdrop').on('click',function(){
-		$('.close').click();
-	 })
-});
+	 	$('#modal').modal();
+	 	$('.modal-backdrop').on('click',function(){
+			$('.close').click();
+	 	})
+	});
 $(window).scroll(function() {
-	if ($(this).scrollTop() > 0) {
-		$('#up').fadeIn();	
-	} else {
-		$('#up').fadeOut();
-	}			
-});
+		if ($(this).scrollTop() > 0) {
+			$('#up').fadeIn();
+		} else {
+			$('#up').fadeOut();
+		}
+	});
 $('#up').on('click',function(){
-	$("body,html").animate({
-					"scrollTop" : 0
-					},"slow",function(){
+		$("body,html").animate({
+							"scrollTop" : 0
+						},"slow",function(){
 									$('#up').fadeOut();	
 								 });
-})
+	})
 
 $('.form-horizontal').submit(function(e) {
-					var $form = $(this);
-					$.ajax({
-						type: $form.attr('method'),
-						url: $form.attr('action'),
-						data: $form.serialize()
-					})
-					.done(function() {
-						$('.btn-block .btn').attr('data-dismiss','modal');
-						$('.btn-block .btn').click();
-						$('#inputText').val('');
-						$('.btn-block .btn').attr('data-dismiss','');
-					})
-					.fail( function() {
-						alert('Ошибка отправки сообщения. Попробуйте позже.');
-					})
-					e.preventDefault(); 
+		var $form = $(this);
+		$.ajax({
+			type: $form.attr('method'),
+			url: $form.attr('action'),
+			data: $form.serialize()
+		})
+		.done(function() {
+			$('.btn-block .btn').attr('data-dismiss','modal');
+			$('.btn-block .btn').click();
+			$('#inputText').val('');
+			$('.btn-block .btn').attr('data-dismiss','');
+		})
+		.fail( function() {
+			alert('Ошибка отправки сообщения. Попробуйте позже.');
+		})
+		e.preventDefault();
 });

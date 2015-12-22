@@ -3,7 +3,7 @@
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);
 	text-align:center;
 	cursor:pointer;
-	margin: 0 10px 10px 0;
+	margin: 0 20px 20px 0;
 	border-radius: 10px 10px 10px 10px;
 }
 .grid-item:hover {
@@ -13,12 +13,9 @@
 	margin-top:5%;
 }
 .picture:hover {
-	border:1px dashed grey;
+	border:1px dashed #3E6D8E;
 }
-.container{
-	margin-top:5%;
-	margin-bottom:5%;
-}
+/*******Блок тегов*****/
 .blockTag li {
 	list-style-type:none;
 	float:left;
@@ -55,28 +52,34 @@
 	margin-right:50px;
 }
 @media screen and (max-width:800px) {
-	.curTag {
+	.curTag, .bigimage {
 		display:none;
 	}
 }
-.header{
-	background:#3a3a3a;
-	color:white;
-	padding:20px;
-	min-height:30px;
+/*********** Header ***********/
+.header {
+	background:#3E6D8E;
+	morgin-bottom:5%;
+	padding:10px;
 }
-.header div div {
-	margin-right:10px;
-	font-size:120%;
+.topmenu div, .topmenu div a {
+	font-size:16px;
+	text-decoration: none;
+	color:white;
 	cursor:pointer;
 }
-.header div div a {
-	color:white;
-	text-decoration: none;
-}
-.header div div div:hover,.header div div div a:hover{
+.topmenu div:hover, .topmenu div a:hover {
 	color:yellow;
 }
+.bigimage {
+	padding:0px;
+	margin-top:50px;
+}
+.detail {
+	margin-top:5%;
+}
+/*******************************/
+
 .btn-block{
 	text-align:center;
 }
@@ -85,6 +88,7 @@
 }
 #modal{
 	display:none;
+	color:#3E6D8E;
 }
 .modal-header h2 {
 	text-align:center;
@@ -92,6 +96,7 @@
 .btn-block button {
 	width:50%;
 }
+/* Button Ups */
 #up {
 	width:60px;
 	height:60px;
@@ -99,7 +104,7 @@
 	bottom:50px;
 	right:20px;
 	z-index:999;
-	background-color:#000;
+	background-color:#3E6D8E;
 	border-radius:30px; 
 	color:white;
 	text-align:center;

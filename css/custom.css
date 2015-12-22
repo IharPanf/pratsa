@@ -3,7 +3,7 @@
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);
 	text-align:center;
 	cursor:pointer;
-	margin: 0 10px 10px 0;
+	margin: 0 20px 20px 0;
 	border-radius: 10px 10px 10px 10px;
 }
 .grid-item:hover {
@@ -13,7 +13,7 @@
 	margin-top:5%;
 }
 .picture:hover {
-	border:1px dashed grey;
+	border:1px dashed #3E6D8E;
 }
 /*******Блок тегов*****/
 .blockTag li {
@@ -96,6 +96,7 @@
 .btn-block button {
 	width:50%;
 }
+/* Button Ups */
 #up {
 	width:60px;
 	height:60px;

@@ -1,14 +1,12 @@
 [
-	{ "name"       : "D3js",
-	  "short"      : "D3js"},
 	{ "name"       : "Native JS",
 	  "short"      : "JS"},
 	{ "name"       : "jQuery",
 	  "short"      : "jQuery"},
+	{ "name"       : "D3js",
+	  "short"      : "D3js"},
 	{ "name"       : "AngularJS",
 	  "short"      : "AngularJS"},
-	{ "name"       : "Node.js",
-	  "short"      : "Node"},
 	{ "name"       : "Quiz",
 	  "short"      : "Quiz"}  
 ]	

@@ -78,6 +78,14 @@
 .detail {
 	margin-top:5%;
 }
+.slogan {
+	position:absolute;
+	top:250px;
+	color:white;
+	font-size:32px;
+	text-align:center;
+	width:100%;
+}
 /*******************************/
 
 .btn-block{
